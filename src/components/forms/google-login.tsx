@@ -5,7 +5,7 @@ import googleIcon from "@/../public/assets/google-logo.svg";
 
 export function GoogleLogin() {
   return (
-    <form action={googleAuthAction}>
+    <form action={googleAuthAction} className="select-none">
       <Button
         type="submit"
         variant={"providers"}

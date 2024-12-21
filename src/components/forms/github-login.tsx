@@ -4,7 +4,7 @@ import Image from "next/image";
 import githubIcon from "@/../public/assets/github-logo.svg";
 export function GitHubLogin() {
   return (
-    <form action={githubAuthAction}>
+    <form action={githubAuthAction} className="select-none">
       <Button
         type="submit"
         variant={"providers"}

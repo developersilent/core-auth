@@ -38,7 +38,7 @@ export default function SignInForm() {
   return (
     <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-5 lg:px-8">
       {/* Logo */}
-      <div className="my-6 flex flex-col items-center justify-center sm:mx-auto sm:w-full sm:max-w-sm">
+      <div className="my-6 flex flex-col items-center justify-center sm:mx-auto sm:w-full sm:max-w-sm select-none">
         <Image
           alt="Your Company"
           src={appLogo.src}
@@ -179,7 +179,7 @@ export default function SignInForm() {
             </div>
 
             {/* Button */}
-            <div className="my-2">
+            <div className="my-2 select-none">
               <Button
                 type="submit"
                 variant={"default"}
