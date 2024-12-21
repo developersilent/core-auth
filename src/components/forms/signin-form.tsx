@@ -84,7 +84,7 @@ export default function SignInForm() {
                           id="name"
                           type="email"
                           placeholder="Email"
-                          className="rounded-xl pl-4 pr-[41px] placeholder:text-xs max-sm:h-11"
+                          className={`rounded-xl pl-4 pr-[41px] text-xs placeholder:text-xs max-sm:h-11 ${errors.email ? "focus-visible:ring-red-500" : ""}`}
                           {...field}
                         />
                         {errors.email && (
@@ -97,7 +97,7 @@ export default function SignInForm() {
                         )}
                       </div>
                     </FormControl>
-                    <FormMessage className="px-2 text-[11px] text-red-600 inline" />
+                    <FormMessage className="inline px-2 text-[11px] text-red-600" />
                   </FormItem>
                 )}
               />
@@ -113,7 +113,7 @@ export default function SignInForm() {
                           id="password"
                           type={showPassword ? "text" : "password"}
                           placeholder="Password"
-                          className="rounded-xl pl-4 pr-[41px] placeholder:text-xs max-sm:h-11"
+                          className={`rounded-xl pl-4 pr-[41px] text-xs placeholder:text-xs max-sm:h-11 ${errors.password ? "focus-visible:ring-red-500" : ""}`}
                           {...field}
                         />
                         {errors.password ? (
@@ -142,7 +142,7 @@ export default function SignInForm() {
                         )}
                       </div>
                     </FormControl>
-                    <FormMessage className="px-2 text-[11px] text-red-600 inline" />
+                    <FormMessage className="inline px-2 text-[11px] text-red-600" />
                   </FormItem>
                 )}
               />
@@ -159,7 +159,7 @@ export default function SignInForm() {
             <div className="my-2">
               <Button
                 type="submit"
-                variant={"btn"}
+                variant={"default"}
                 className={
                   "flex w-full rounded-xl border border-border px-4 py-2 max-sm:h-11"
                 }
@@ -174,7 +174,7 @@ export default function SignInForm() {
           Don't have an account?
           <Link
             href="/signup"
-            className="px-1 font-semibold text-indigo-600 underline hover:text-indigo-500"
+            className="px-1 font-semibold text-black/90 underline hover:text-indigo-500"
           >
             Sign up
           </Link>

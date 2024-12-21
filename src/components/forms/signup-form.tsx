@@ -85,7 +85,7 @@ export default function SignInForm() {
                           id="username"
                           type="text"
                           placeholder="Username"
-                          className="rounded-xl pl-4 pr-[41px] text-xs placeholder:text-xs max-sm:h-11"
+                          className={`rounded-xl pl-4 pr-[41px] text-xs placeholder:text-xs max-sm:h-11 ${errors.username ? "focus-visible:ring-red-500" : ""}`}
                           {...field}
                         />
                         {errors.username && (
@@ -114,7 +114,7 @@ export default function SignInForm() {
                           id="email"
                           type="email"
                           placeholder="Email"
-                          className="rounded-xl pl-4 pr-[41px] text-xs placeholder:text-xs max-sm:h-11"
+                          className={`rounded-xl pl-4 pr-[41px] text-xs placeholder:text-xs max-sm:h-11 ${errors.email ? "focus-visible:ring-red-500" : ""}`}
                           {...field}
                         />
                         {errors.email && (
@@ -143,7 +143,7 @@ export default function SignInForm() {
                           id="password"
                           type={showPassword ? "text" : "password"}
                           placeholder="Password"
-                          className={`rounded-xl pl-4 pr-[41px] placeholder:text-xs max-sm:h-11 text-xs`}
+                          className={`rounded-xl pl-4 pr-[41px] text-xs placeholder:text-xs max-sm:h-11 ${errors.password ? "focus-visible:ring-red-500" : ""}`}
                           {...field}
                         />
                         {errors.password ? (
@@ -182,7 +182,7 @@ export default function SignInForm() {
             <div className="my-2">
               <Button
                 type="submit"
-                variant={"btn"}
+                variant={"default"}
                 className={
                   "flex w-full rounded-xl border border-border px-4 py-2 max-sm:h-11"
                 }
@@ -197,7 +197,7 @@ export default function SignInForm() {
           Already have an account?
           <Link
             href="/signin"
-            className="px-1 font-semibold text-indigo-600 underline hover:text-indigo-500"
+            className="px-1 font-semibold text-black/90 underline hover:text-indigo-500"
           >
             Sign in
           </Link>

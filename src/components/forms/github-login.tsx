@@ -18,7 +18,7 @@ export function GitHubLogin() {
           width={25}
           height={25}
         />
-        <span className={"text-xs text-primary"}>Continue with GitHub</span>
+        <span className={"text-xs text-black/90"}>Continue with GitHub</span>
       </Button>
     </form>
   );

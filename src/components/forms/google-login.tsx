@@ -19,7 +19,7 @@ export function GoogleLogin() {
           width={19}
           height={19}
         />
-        <span className={"text-xs text-primary"}>Continue with Google</span>
+        <span className={"text-xs text-black/90"}>Continue with Google</span>
       </Button>
     </form>
   );
