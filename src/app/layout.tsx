@@ -9,8 +9,8 @@ const poppin = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "test-app",
-  description: "Just Hated !!",
+  title: "core-auth",
+  description: "core-auth is a fullstack boilerplate with authentication using Auth.js , Next.js, tRPC and Drizzle",
 };
 
 export default function RootLayout({
