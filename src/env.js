@@ -16,6 +16,9 @@ export const env = createEnv({
     AUTH_SECRET: z.string(),
     SIGNIN_SINGUP_REDIRECT_URL: z.string(),
     SIGNOUT_REDIRECT_URL: z.string(),
+    PUBLIC_API_ENDPOINTS: z.string(),
+    AUTH_API_ENDPONT: z.string(),
+    PROTECTED_API_ENDPOINTS: z.string(),
   },
 
   /**
@@ -41,6 +44,10 @@ export const env = createEnv({
     AUTH_SECRET: process.env.AUTH_SECRET,
     SIGNIN_SINGUP_REDIRECT_URL: process.env.SIGNIN_SINGUP_REDIRECT_URL,
     SIGNOUT_REDIRECT_URL: process.env.SIGNOUT_REDIRECT_URL,
+    PUBLIC_API_ENDPOINTS: process.env.PUBLIC_API_ENDPOINTS,
+    AUTH_API_ENDPONT: process.env.AUTH_API_ENDPONT,
+    PROTECTED_API_ENDPOINTS: process.env.PROTECTED_API_ENDPOINTS,
+
     // NEXT_PUBLIC_CLIENTVAR: process.env.NEXT_PUBLIC_CLIENTVAR,
   },
   /**
