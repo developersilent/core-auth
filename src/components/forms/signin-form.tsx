@@ -20,6 +20,7 @@ import { GoogleLogin } from "@/components/forms/google-login";
 import Image from "next/image";
 import { GitHubLogin } from "./github-login";
 import appLogo from "@/../public/assets/auth-logo.svg";
+import { signInAction } from "@/server/actions/auth.actions";
 
 export default function SignInForm() {
   const [showPassword, setShowPassword] = useState(false);
@@ -31,8 +32,9 @@ export default function SignInForm() {
     },
   });
   const { errors, dirtyFields } = rhf.formState;
-  const submitForm = (data: signInFormValues) => {
-    console.log(data);
+  const submitForm = async (data: signInFormValues) => {
+    const res = await signInAction(data);
+    console.log(res);
   };
   return (
     <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-5 lg:px-8">
