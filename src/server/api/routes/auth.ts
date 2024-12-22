@@ -1,11 +1,11 @@
 import { db } from "@/db/db";
 import { users } from "@/db/schema/schema";
 import { createTRPCRouter, publicProcedure } from "@/server/trpc/init";
-import { AuthRouterReturnMessage } from "@/types/return.types";
+import { type AuthRouterReturnMessage } from "@/types/return.types";
 import { signInFormSchema, signUpFormSchema } from "@/types/zod.form";
 import { eq } from "drizzle-orm";
 import bcrypt from "bcryptjs";
-import { User } from "next-auth";
+import { type User } from "next-auth";
 
 export const authRoutes = createTRPCRouter({
   SignUp: publicProcedure
@@ -53,7 +53,7 @@ export const authRoutes = createTRPCRouter({
           successStatus: true,
           message: "User created successfully",
         };
-      } catch (error) {
+      } catch {
         return {
           successStatus: false,
           message: "Internal server error, please try again !",
@@ -81,10 +81,7 @@ export const authRoutes = createTRPCRouter({
             message: "User not found",
           };
         }
-        const matchPassword = await bcrypt.compare(
-          password,
-          getUser.password as string,
-        );
+        const matchPassword = await bcrypt.compare(password, getUser.password!);
         if (!matchPassword) {
           return {
             successStatus: false,
@@ -96,7 +93,7 @@ export const authRoutes = createTRPCRouter({
           message: "User data is sent",
           user: getUser,
         };
-      } catch (error) {
+      } catch {
         return {
           successStatus: false,
           message: "Internal server error, please try again !",

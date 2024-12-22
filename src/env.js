@@ -14,6 +14,8 @@ export const env = createEnv({
     GOOGLE_CLIENT_ID: z.string(),
     GOOGLE_CLIENT_SECRET: z.string(),
     AUTH_SECRET: z.string(),
+    SIGNIN_SINGUP_REDIRECT_URL: z.string(),
+    SIGNOUT_REDIRECT_URL: z.string(),
   },
 
   /**
@@ -37,6 +39,8 @@ export const env = createEnv({
     GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID,
     GOOGLE_CLIENT_SECRET: process.env.GOOGLE_CLIENT_SECRET,
     AUTH_SECRET: process.env.AUTH_SECRET,
+    SIGNIN_SINGUP_REDIRECT_URL: process.env.SIGNIN_SINGUP_REDIRECT_URL,
+    SIGNOUT_REDIRECT_URL: process.env.SIGNOUT_REDIRECT_URL,
     // NEXT_PUBLIC_CLIENTVAR: process.env.NEXT_PUBLIC_CLIENTVAR,
   },
   /**

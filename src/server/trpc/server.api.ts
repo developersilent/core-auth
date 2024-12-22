@@ -8,7 +8,7 @@ import { createQueryClient } from "./query-client";
 import { createTRPCContext } from "@/server/trpc/context";
 import { type AppRouter, createCaller } from "@/server/api/root";
 
-const createContext = cache( async () => {
+const createContext = cache(async () => {
   const heads = new Headers(await headers());
   return createTRPCContext({
     header: heads,

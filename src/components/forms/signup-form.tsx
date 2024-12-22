@@ -7,7 +7,7 @@ import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useForm } from "react-hook-form";
-import { signUpFormSchema, signUpFormValues } from "@/types/zod.form";
+import { signUpFormSchema, type signUpFormValues } from "@/types/zod.form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import {
   Form,
@@ -21,7 +21,9 @@ import Image from "next/image";
 import { GitHubLogin } from "./github-login";
 import appLogo from "@/../public/assets/auth-logo.svg";
 import { signUpAction } from "@/server/actions/auth.actions";
+import { type ImageScrProps } from "@/types/return.types";
 
+const imageSrc = appLogo as ImageScrProps;
 export default function SignInForm() {
   const [showPassword, setShowPassword] = useState(false);
   const rhf = useForm<signUpFormValues>({
@@ -40,10 +42,10 @@ export default function SignInForm() {
   return (
     <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-5 lg:px-8">
       {/* Logo */}
-      <div className="my-6 flex flex-col items-center justify-center sm:mx-auto sm:w-full sm:max-w-sm select-none">
+      <div className="my-6 flex select-none flex-col items-center justify-center sm:mx-auto sm:w-full sm:max-w-sm">
         <Image
           alt="Your Company"
-          src={appLogo.src}
+          src={imageSrc.src}
           width={50}
           height={50}
           className="mx-auto h-14 w-auto"

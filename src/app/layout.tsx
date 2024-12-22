@@ -1,14 +1,12 @@
 import type { Metadata } from "next";
 import "@/styles/globals.css";
-import {TRPCReactProvider} from "@/server/trpc/react";
-import {Poppins} from "next/font/google";
-
+import { TRPCReactProvider } from "@/server/trpc/react";
+import { Poppins } from "next/font/google";
 
 const poppin = Poppins({
   subsets: ["latin"],
   weight: "400",
 });
-
 
 export const metadata: Metadata = {
   title: "test-app",
@@ -22,13 +20,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-    <TRPCReactProvider>
-      <body
-        className={` ${poppin.className} antialiased`}
-      >
-        {children}
-      </body>
-    </TRPCReactProvider>
+      <TRPCReactProvider>
+        <body className={` ${poppin.className} antialiased`}>{children}</body>
+      </TRPCReactProvider>
     </html>
   );
 }
