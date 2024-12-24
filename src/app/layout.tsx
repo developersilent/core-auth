@@ -10,7 +10,8 @@ const poppin = Poppins({
 
 export const metadata: Metadata = {
   title: "core-auth",
-  description: "core-auth is a fullstack boilerplate with authentication using Auth.js , Next.js, tRPC and Drizzle",
+  description:
+    "core-auth is a fullstack boilerplate with authentication using Auth.js , Next.js, tRPC and Drizzle",
 };
 
 export default function RootLayout({

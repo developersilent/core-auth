@@ -1,4 +1,4 @@
-import { MiddlewareConfig } from "next/server";
+import type { MiddlewareConfig } from "next/server";
 import { auth } from "@/auth";
 import { env } from "@/env";
 

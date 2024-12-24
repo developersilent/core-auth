@@ -3,8 +3,16 @@
  * for Docker builds.
  */
 import "./src/env.js";
+import { env } from "./src/env.js";
 
+const authUrl = env.AUTH_URL;
 /** @type {import("next").NextConfig} */
-const config = {};
+const config = {
+  // Enable for ngrok testing
+  // env: {
+  //   authUrl: authUrl,
+  //   TRUSTED_HOSTS: env.AUTH_TRUST_HOST,
+  // },
+};
 
 export default config;
